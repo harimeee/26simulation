@@ -362,7 +362,13 @@ function render() {
   else renderHome();
 }
 
+function closeConceptModal() {
+  modalRoot.innerHTML = "";
+  document.body.classList.remove("modal-open");
+}
+
 function openConceptModal() {
+  document.body.classList.add("modal-open");
   modalRoot.innerHTML = `
     <div class="modal-backdrop">
       <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -411,8 +417,12 @@ document.addEventListener("click", (event) => {
     openConceptModal();
     return;
   }
+  if (target.classList.contains("modal-backdrop")) {
+    closeConceptModal();
+    return;
+  }
   if (target.closest("[data-close-modal]")) {
-    if (target.closest(".modal-close") || target.tagName === "BUTTON") modalRoot.innerHTML = "";
+    if (target.closest(".modal-close") || target.tagName === "BUTTON") closeConceptModal();
     return;
   }
   const stageButton = target.closest("[data-stage]");
@@ -508,7 +518,7 @@ document.addEventListener("submit", (event) => {
     delete state.progress[id];
     return;
   }
-  modalRoot.innerHTML = "";
+  closeConceptModal();
   showToast("새 개념 노트를 만들었어요. 이제 탐구를 시작해 보세요!");
   goTo("library");
 });
