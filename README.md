@@ -6,6 +6,16 @@
 
 `index.html`을 브라우저에서 열면 바로 사용할 수 있습니다. 설치나 서버가 필요하지 않습니다.
 
+홈 화면에는 15초 소개 영상이 재생됩니다. 영상을 다시 렌더링하려면 Node.js와 Chrome 또는 Edge가 필요합니다.
+
+```bash
+npm install
+npm run render:intro:storyboard
+npm run render:intro
+```
+
+렌더링 결과는 `intro.mp4`이며, 스토리보드는 `intro-storyboard.jpg`로 생성됩니다. 브라우저를 자동으로 찾지 못하면 `PLAYWRIGHT_CHROMIUM_EXECUTABLE` 환경 변수에 Chrome 또는 Edge 실행 파일 경로를 지정하세요.
+
 ## 사용 방법
 
 - 예시 개념(과학·수학·사회)을 골라 탐구를 시작합니다.

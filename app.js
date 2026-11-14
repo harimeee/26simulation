@@ -216,6 +216,12 @@ function renderHome() {
       <div><div class="eyebrow">YOUR LEARNING GARDEN</div><h1>오늘은 어떤 개념을<br>키워 볼까요?</h1><p>질문하고, 연결하고, 내 말로 설명하며 개념을 깊이 이해해요.</p></div>
       <button class="secondary-button" data-action="add-concept"><span>＋</span> 개념 추가</button>
     </div>
+    <section class="intro-film" aria-label="개념의 숲 소개 영상">
+      <video controls autoplay muted loop playsinline preload="metadata" aria-label="생각의 씨앗, 개념의 숲 소개 영상">
+        <source src="intro.mp4" type="video/mp4">
+        브라우저에서 소개 영상을 재생할 수 없어요.
+      </video>
+    </section>
     <section class="welcome-banner">
       <div class="welcome-copy"><div class="eyebrow">오늘의 탐구</div><h2>${inProgress ? "이어가던 탐구를 마무리해요" : "질문 하나가 이해를 바꿔요"}</h2><p>${featured ? `「${escapeHTML(featured.title)}」${inProgress ? "에서 멈춘 곳부터 이어서 탐구해요." : "의 핵심 질문을 따라가며 새롭게 살펴보세요."}` : "첫 개념을 추가하고 나만의 학습을 시작해 보세요."}</p>${featured ? `<button class="primary-button" data-start="${escapeHTML(featured.id)}">탐구 이어가기 <span aria-hidden="true">→</span></button>` : `<button class="primary-button" data-action="add-concept">첫 개념 만들기 <span aria-hidden="true">→</span></button>`}</div>
       <div class="banner-art" aria-hidden="true"><div class="banner-orbit"></div><div class="banner-sun"></div><div class="banner-leaf leaf-one"></div><div class="banner-leaf leaf-two"></div><div class="banner-leaf leaf-three"></div></div>

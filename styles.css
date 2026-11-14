@@ -78,6 +78,9 @@ a { color: inherit; text-decoration: none; }
 .quiet-button { color: var(--green); background: transparent; }
 .quiet-button:hover { background: #f0f4ed; }
 
+.intro-film { overflow: hidden; margin: -5px 0 25px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.intro-film video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; }
+
 .welcome-banner { position: relative; min-height: 205px; display: flex; align-items: center; overflow: hidden; margin-bottom: 25px; padding: 27px 34px; border-radius: 15px; color: #fff; background: #315d42; }
 .welcome-copy { position: relative; z-index: 1; max-width: 500px; }
 .welcome-copy .eyebrow { color: #c2d6ae; }
